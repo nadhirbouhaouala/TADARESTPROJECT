@@ -1,0 +1,23 @@
+{% extends object_name|add:'/base.html' %}
+
+{% block navbar %}
+<a class="btn btn-outline-info btn-md" href="{% url object_name|add:'_new' %}">+ New {{object_name}}</a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">Delete - {{object_name}}
+        <small>{{ object }}</small>
+    </h1>
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+                <div class="alert alert-warning" role="alert">
+                  Are you sure to delete {{ object }} ?
+                </div>
+                <input type="submit" class="btn btn-info" value="Yes, delete it" />
+                <a class="btn btn-success" href="{% url object_name|add:'_list' %}">No, just I've tried the delete button</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

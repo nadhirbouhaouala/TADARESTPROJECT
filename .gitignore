@@ -1,0 +1,6 @@
+db.sqlite3
+static/files/*
+#BellaVistaGOLight_Project/__pycache__
+#BellaVistaGOLight_Project/settings.py
+main_app/__pycache__
+main_app/migrations
